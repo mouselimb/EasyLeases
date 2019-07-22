@@ -1,0 +1,95 @@
+﻿@model IEnumerable<EasyLeasesDB.Models.Homeowners>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRepresented)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerPhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerState)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerZip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HomeownerPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FkRealtors)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRepresented)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerPhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HomeownerPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FkRealtors.RealtorsId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HomeownersId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HomeownersId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HomeownersId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

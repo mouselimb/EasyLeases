@@ -1,0 +1,66 @@
+﻿@model EasyLeasesDB.Models.Leases
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Leases</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LeaseNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LeaseNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LeaseStartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LeaseStartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LeaseEndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LeaseEndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LeaseAmount)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LeaseAmount)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FkHomeowners)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FkHomeowners.HomeownersId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FkProperties)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FkProperties.PropertiesId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FkRealtors)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FkRealtors.RealtorsId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FkRenters)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FkRenters.RentersId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.LeasesId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,82 @@
+﻿@model EasyLeasesDB.Models.Homeowners
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Homeowners</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FkRealtorsId" class="control-label"></label>
+                <select asp-for="FkRealtorsId" class ="form-control" asp-items="ViewBag.FkRealtorsId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsRepresented" class="control-label"></label>
+                <input asp-for="IsRepresented" class="form-control" />
+                <span asp-validation-for="IsRepresented" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerName" class="control-label"></label>
+                <input asp-for="HomeownerName" class="form-control" />
+                <span asp-validation-for="HomeownerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerEmail" class="control-label"></label>
+                <input asp-for="HomeownerEmail" class="form-control" />
+                <span asp-validation-for="HomeownerEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerPhoneNumber" class="control-label"></label>
+                <input asp-for="HomeownerPhoneNumber" class="form-control" />
+                <span asp-validation-for="HomeownerPhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerAddress" class="control-label"></label>
+                <input asp-for="HomeownerAddress" class="form-control" />
+                <span asp-validation-for="HomeownerAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerCity" class="control-label"></label>
+                <input asp-for="HomeownerCity" class="form-control" />
+                <span asp-validation-for="HomeownerCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerState" class="control-label"></label>
+                <input asp-for="HomeownerState" class="form-control" />
+                <span asp-validation-for="HomeownerState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerZip" class="control-label"></label>
+                <input asp-for="HomeownerZip" class="form-control" />
+                <span asp-validation-for="HomeownerZip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerUserName" class="control-label"></label>
+                <input asp-for="HomeownerUserName" class="form-control" />
+                <span asp-validation-for="HomeownerUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HomeownerPassword" class="control-label"></label>
+                <input asp-for="HomeownerPassword" class="form-control" />
+                <span asp-validation-for="HomeownerPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

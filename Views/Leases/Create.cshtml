@@ -1,0 +1,64 @@
+﻿@model EasyLeasesDB.Models.Leases
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Leases</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FkHomeownersId" class="control-label"></label>
+                <select asp-for="FkHomeownersId" class ="form-control" asp-items="ViewBag.FkHomeownersId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkPropertiesId" class="control-label"></label>
+                <select asp-for="FkPropertiesId" class ="form-control" asp-items="ViewBag.FkPropertiesId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkRealtorsId" class="control-label"></label>
+                <select asp-for="FkRealtorsId" class ="form-control" asp-items="ViewBag.FkRealtorsId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FkRentersId" class="control-label"></label>
+                <select asp-for="FkRentersId" class ="form-control" asp-items="ViewBag.FkRentersId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaseNumber" class="control-label"></label>
+                <input asp-for="LeaseNumber" class="form-control" />
+                <span asp-validation-for="LeaseNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaseStartDate" class="control-label"></label>
+                <input asp-for="LeaseStartDate" class="form-control" />
+                <span asp-validation-for="LeaseStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaseEndDate" class="control-label"></label>
+                <input asp-for="LeaseEndDate" class="form-control" />
+                <span asp-validation-for="LeaseEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LeaseAmount" class="control-label"></label>
+                <input asp-for="LeaseAmount" class="form-control" />
+                <span asp-validation-for="LeaseAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
